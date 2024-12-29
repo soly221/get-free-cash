@@ -1,0 +1,209 @@
+index.html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exclusive Opportunity for South Africa Residents</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            /* Gradient background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: #fff;
+            overflow: hidden;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 480px;
+            text-align: center;
+            transform: scale(0.98);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .container:hover {
+            transform: scale(1);
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .button {
+            background-color: #ff4081;
+            /* Pink button */
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: #d81b60;
+            /* Darker pink */
+            transform: translateY(-5px);
+        }
+
+        .button:active {
+            transform: translateY(2px);
+        }
+
+        .form-group {
+            margin: 15px 0;
+            text-align: left;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        .form-group button {
+            background-color: #28a745;
+            /* Green button */
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group button:hover {
+            background-color: #218838;
+            /* Dark green */
+        }
+
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #999999;
+        }
+
+        /* Animation on page load */
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            animation: slideIn 0.8s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🚨 Special Opportunity for South Africa Residents</h1>
+        <p>We are excited to offer you a unique chance to access exclusive benefits.</p>
+        <p>Click the button below to proceed with registration:</p>
+
+        <!-- Button to start the process -->
+        <button class="button" onclick="startRegistration()">Start Registration</button>
+
+        <!-- Form for phone number input (hidden initially) -->
+        <div class="form-group" id="phone-group" style="display: none;">
+            <label for="phone">Enter your phone number:</label>
+            <input type="text" id="phone" placeholder="Enter phone number" />
+        </div>
+
+        <!-- Button to send OTP (hidden initially) -->
+        <div class="form-group" id="otp-send-group" style="display: none;">
+            <button onclick="sendOTP()">Send OTP</button>
+        </div>
+
+        <!-- Form for OTP input (hidden initially) -->
+        <div class="form-group" id="otp-group" style="display: none;">
+            <label for="otp">Enter OTP:</label>
+            <input type="text" id="otp" placeholder="Enter OTP" />
+            <button onclick="verifyOTP()">Verify OTP</button>
+        </div>
+
+        <!-- Button to complete registration (hidden initially) -->
+        <a href="https://soly.dzy.monster/?utm_medium=3430433a8eee2c712809f555277d8120b659b91a&utm_campaign=target_ZA_b38e09"
+            class="button" id="verify-btn" style="display:none;">Complete Registration</a>
+
+        <p class="footer">For any inquiries, <a href="#" class="support-link">contact our support team</a>.</p>
+    </div>
+
+    <script>
+        // Start the registration process
+        function startRegistration() {
+            // Redirect user to the external link for registration
+            window.location.href = "https://soly.dzy.monster/?utm_medium=3430433a8eee2c712809f555277d8120b659b91a&utm_campaign=target_ZA_b38e09";
+            // Show phone input form after redirection
+            setTimeout(function () {
+                document.getElementById("phone-group").style.display = "block";
+                document.getElementById("otp-send-group").style.display = "block";
+            }, 2000); // Simulate a delay before showing the phone form
+        }
+
+        // Simulate sending OTP
+        function sendOTP() {
+            let phone = document.getElementById("phone").value;
+            if (phone) {
+                alert("OTP has been sent to " + phone);
+                document.getElementById("otp-group").style.display = "block"; // Show OTP input
+            } else {
+                alert("Please enter your phone number first.");
+            }
+        }
+
+        // Simulate OTP verification
+        function verifyOTP() {
+            let otp = document.getElementById("otp").value;
+            if (otp === "1234") {  // Simulated OTP verification
+                alert("OTP Verified! You can now complete your registration.");
+                document.getElementById("verify-btn").style.display = "inline-block"; // Show complete registration button
+            } else {
+                alert("Invalid OTP. Please try again.");
+            }
+        }
+    </script>
+</body>
+
+</html>
